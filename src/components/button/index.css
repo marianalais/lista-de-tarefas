@@ -2,7 +2,25 @@
   text-align: center;
   cursor: pointer;
   font-family: Didot, serif;
-  background-color: #c68f65;
+
   color: #e6eef6;
   border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+button:hover {
+  opacity: 1;
+}
+
+.button-primary {
+  background-color: #333974;
+}
+
+.button-secondary {
+  background-color: #5cb85c;
+}
+.button-tertiary {
+  background-color: #d95367;
 }

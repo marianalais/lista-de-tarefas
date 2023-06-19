@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 
 const Input = ({ type, value, label, placeholder, onChange, ...rest }) => {
   return (
@@ -10,7 +11,7 @@ const Input = ({ type, value, label, placeholder, onChange, ...rest }) => {
         type={type}
         value={value}
         placeholder={placeholder}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={onChange}
       />
     </div>
   );

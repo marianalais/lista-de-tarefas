@@ -11,8 +11,8 @@ const TodoList = ({ todos }) => {
             <p key={todo.id}>{todo.category}</p>
           </div>
           <div className="content-button">
-            <Button text={"Completar"} />
-            <Button text={"Deletar"} />
+            <Button type={"secondary"} text={"Completar"} />
+            <Button type={"tertiary"} text={"Deletar"} />
           </div>
         </div>
       ))}
