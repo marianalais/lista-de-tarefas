@@ -1,0 +1,15 @@
+body {
+  font-family: Arial;
+  padding: 30px;
+  color: #333;
+}
+.app {
+  max-width: 600px;
+  margin: 0 auto 300px;
+  background-color: #ffff;
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+.title {
+  text-align: center;
+}
