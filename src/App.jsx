@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TodoList from "./components/to-do-list";
 import "./App.css";
 import TodoForm from "./components/to-do-form";
@@ -27,6 +27,7 @@ function App() {
     },
   ]);
   const [search, setSearch] = useState("");
+  const [filteredTodos, setFilteredTodos] = useState([]);
 
   const addTodo = (text, category) => {
     const newTodo = [
@@ -56,6 +57,16 @@ function App() {
     setTodos(newTodos);
   };
 
+  // useEffects esta ouvindo os estados [search, todos] sempre que são alterados executam esta logica
+  useEffect(() => {
+    if (search) {
+      const newFiltredList = todos.filter((todo) =>
+        todo.text.toLowerCase().includes(search.toLowerCase())
+      );
+      setFilteredTodos(newFiltredList);
+    } else setFilteredTodos([]);
+  }, [search, todos]);
+
   return (
     <div className="app">
       <h1 className="title">Lista de tarefas</h1>
@@ -63,14 +74,13 @@ function App() {
       <Filter />
       <div className="todo-list">
         <TodoList
-          key={todos.id}
-          todos={todos}
+          todos={search ? filteredTodos : todos}
           removeTodo={removeTodo}
           completeTodo={completeTodo}
         />
       </div>
       <div className="todo-form">
-        <TodoForm key={todos.id} addTodo={addTodo} />
+        <TodoForm addTodo={addTodo} />
       </div>
     </div>
   );

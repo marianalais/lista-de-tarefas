@@ -7,12 +7,13 @@ const TodoList = ({ todos, removeTodo, completeTodo }) => {
     <div>
       {todos.map((todo) => (
         <div
+          key={todos.id}
           className="todo"
           style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
         >
           <div>
-            <p key={todo.id}>{todo.text}</p>
-            <p key={todo.id}>({todo.category})</p>
+            <p>{todo.text}</p>
+            <p>({todo.category})</p>
           </div>
           <div className="content-button">
             <Button
